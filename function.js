@@ -34,3 +34,58 @@ function calculateSupply(age, amountPerDay) {
     let maxAge = 100;
     return `You will need ${amountPerDay * (maxAge - age)} kcal of food to last until the ripe of old age of ${maxAge}`;
 }
+
+//Higher Order Function. 
+//Write a function that accepts another function as a parameter and then calls it 3 times.
+
+function callAFunctionXTimes(funcToCall, numOfTimesToCall) {
+    for (let i = 0; i < numOfTimesToCall; i++) {
+        funcToCall()
+    }
+}
+
+//call kk and give it a functin tha says hi and tell KK to call it 15x
+
+let sayHi = function () {
+    console.log('Hiii')
+}
+
+let sayBye = function () {
+    console.log('Bye')
+    sayHi();
+}
+
+callAFunctionXTimes(sayHi, 15);
+callAFunctionXTimes(sayBye, 12);
+
+
+// inline arrow function example. These two functions are equivalent:
+var addFunction = function (x, y) {
+    return x + y;
+}
+
+var addFunctionArrow = (x, y) => x + y;
+
+
+var bmiCalculator = function (height, weight) {
+    return height * weight / 100
+};
+
+var bmiCalculatorArrow = (height, weight) => height * weight / 100;
+
+var tvDsitanceCalculator = function (tvSize) {
+    console.log('calculating...');
+    return tvSize / 8;
+}
+
+var tvDsitanceCalculatorArrow = tvSize => {
+    console.log('calculating...');
+    return tvSize / 8;
+}
+
+var richAuntieOutputter = function () {
+    console.log('I am the rich auntie!');
+}
+
+var richAuntieOutputterArrow = () => console.log('I am the rich auntie!');
+
